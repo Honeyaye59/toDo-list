@@ -1,0 +1,16 @@
+<div class="container">
+    <span class="p-float-label">
+        <input id="float-input" type="text" pInputText #listInput [(ngModel)]="inputValue">
+        <label for="float-input">To Do</label>
+        <button pButton type="button" class="p-button-raised p-button-outlined plus-btn" (click)="addItem(listInput.value)">+</button>
+    </span>
+    
+
+    
+    
+    <div *ngFor="let item of listAry; let i = index" class="list-container">
+        <input type="checkbox" [(ngModel)]="item.isDone" class="pInputText" [ngStyle]="{accentColor:'var(--teal-800)'}">
+        <span class="list-item" [ngStyle]="{'text-decoration': item.isDone ? 'line-through' : 'none'}">{{item.list}}</span>
+    </div>
+    
+</div>
